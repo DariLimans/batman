@@ -1,0 +1,525 @@
+/*  что бы правильно распологалось по ширине и высоте*/
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    /* цвет заливки заднего фона */
+    background-color: #0A090A;
+    /* цвет шрифта */
+    color: #fff;
+    /* шрифт  */
+    font-family: 'Roboto', sans-serif;
+    /* фоновая картинка с бэтменом, ..-выходим из папки css,/img - захожу в папку img и оттуда достаю картинку*/
+    background-image: url("../img/main-bg.png");
+    /* что бы эта картинка не повторялась */
+    background-repeat: no-repeat;
+    /* что бы картинка была прижата к верхнему краю и распологалась по центру, даже если мы будем изменять размер рабочего окна вкладки */
+    background-position: top center;
+    /* что бы фоновая картинка растягивалась под любой экран */
+    background-size: 100%;
+}
+
+.container {
+    /* максимальная ширина */
+    max-width: 1140px;
+    /* выравниваем по центру */
+    margin: auto;
+}
+
+/* Стили для шапки */
+.header {
+    /* Что бы элементы распологались в строчку */
+    display: flex;
+    /* выравниваю по центру по вертикали */
+    align-items: center;
+    /* Что бы между элементами в строке было одинаковое расстояние */
+    justify-content: space-between;
+    /* внутренний отступ сверху */
+    padding-top: 45px;
+    /* отсуп вниз до следующего юлока с инфой о фильме */
+    margin-bottom: 30%;
+}
+
+.logo {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+/* выравниваем кнопочку по центру равномерно строке ввода */
+.search {
+    display: flex;
+    align-items: center;
+    flex: 0.8;
+}
+
+/* поле для ввода */
+.search-input {
+    flex: 1;
+    /* цвет заливки */
+    background: rgba(196, 196, 196, 0.5);
+    /* закругление полей */
+    border-radius: 5px;
+    /* внутренние отступы сверху */
+    padding-top: 12px;
+    /* внутренние отступы снизу */
+    padding-bottom: 12px;
+    /* отступы по краям */
+    padding-left: 18px;
+    padding-right: 18px;
+    /* убираем рамку */
+    border: none;
+    /* цвет шрифта */
+    color: #AEAEAE;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+/* что бы во всех браузеров input (слова) отобраджался одного и того же цвета, взяли с сайта https://htmlcolorcodes.com/tutorials/css-placeholder-color/ */
+::-webkit-input-placeholder {
+    /* Chrome */
+    color: #AEAEAE;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #AEAEAE;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #AEAEAE;
+    opacity: 1;
+}
+
+:-moz-placeholder {
+    /* Firefox 4 - 18 */
+    color: #AEAEAE;
+    opacity: 1;
+}
+
+/* стиль для нашей поисковой кнопочки */
+.search-button {
+    /* фоновый цвет кнопки, transparent - прозрачный*/
+    background-color: transparent;
+    /* отсутсвие границ */
+    border: none;
+    /* отступ со всех сторон, сверху 10px, по кроям 18px  */
+    padding: 10px 18px;
+}
+
+.bookmark {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    /* отступ слева */
+    margin-left: 20px;
+    /* ширина авы */
+    width: 40px;
+    /* высота авы */
+    height: 40px;
+    /* скругление аватарки */
+    border-radius: 50%;
+    /* что бы фотография не растягивалась, а равномерно распологалась */
+    object-fit: cover;
+}
+
+/* заголовок Бэтмен */
+.title {
+    /* сбрасываем все отступы */
+    margin: 0;
+    /* наш шрифт, взято с сайта fronts.google.com вместе с link в html */
+    font-family: 'Playfair Display', serif;
+    /* высота шрифта */
+    font-size: 48px;
+    /* высота строки */
+    line-height: 64px;
+    /* отступ вниз до слова The Batman */
+    margin-bottom: 7px;
+}
+
+/* Подзоголовок The Batman */
+.title-en {
+    /* тег span строчный, мы его должны сделать строчно-блочным */
+    display: inline-block;
+    font-size: 20px;
+    line-height: 23px;
+    color: #787878;
+    margin-bottom: 38px;
+}
+
+.info {
+    /* что бы все элементы расположились друг за другом */
+    display: flex;
+    /* расположение элементов по центру */
+    align-items: center;
+    /* что бы кнопка подробнее улетела в противоположную сторону экрана */
+    justify-content: space-between;
+    /* отсуп вниз, что бы контент правильно распологался */
+    margin-bottom: 100px;
+}
+
+.movie-info {
+    display: flex;
+    /* выравнивание по верткали по центру */
+    align-items: center;
+}
+
+/* Фильм */
+.tag {
+    /* тег span строчный, мы его должны сделать строчно-блочным */
+    display: inline-block;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+    background: #FFFFFF;
+    border-radius: 3px;
+    /* отступы  внутри*/
+    padding: 5px 10px;
+    /* отступ вправо */
+    margin-right: 20px;
+}
+
+.country {
+    font-size: 16px;
+    line-height: 19px;
+    /* отступ вправо */
+    margin-right: 33px;
+}
+
+/* Смотреть трейлер */
+.play {
+    display: flex;
+    /* выравнивание по верткали по центру */
+    align-items: center;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    /* что бы кнопка не была подчеркнута */
+    text-decoration: none;
+}
+
+/* создаём псевдоэлемент для кнопочки play, before - перед */
+.play:before {
+    /* пустое содержимое */
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/play.svg);
+    /* что бы фоновая картинка не повторялась */
+    background-repeat: no-repeat;
+    /* что бы размер кнопки был по размеру блока */
+    background-size: 100%;
+    /* отступ справа */
+    margin-right: 15px;
+}
+
+/* кнопка подробнее */
+.more {
+    display: flex;
+    /* выравнивание по верткали по центру */
+    align-items: center;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    /* что бы кнопка не была подчеркнута */
+    text-decoration: none;
+}
+
+/* псевдоэлемент для "подробнее", что бы сделать кнопочку play,after- после */
+.more:after {
+    /* пустое содержимое */
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/play.svg);
+    /* что бы фоновая картинка не повторялась */
+    background-repeat: no-repeat;
+    /* что бы размер кнопки был по размеру блока */
+    background-size: 100%;
+    /* что бы кнопка play отодвигалась влево */
+    margin-left: 15px;
+    /* что бы кнопка повернулась на 90 градусов */
+    transform: rotate(90deg);
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    /* заливка фона */
+    background: #FFFFFF;
+    /* скругление углов */
+    border-radius: 3px;
+    /* цвет шрифта */
+    color: #000000;
+    /* внутренние отступы (воздух), сверху 43рх, а по краям 50рх */
+    padding: 3% 4%;
+}
+
+.short-info {
+    margin-right: 3%;
+}
+
+.poster {
+    /* должен стать блочным, чтобы кнопка была не справа, а снизу */
+    display: block;
+    /* делаем выступ постера выше самого блока */
+    margin-top: -40%;
+    /* от постора отодвигаем кнопку вниз на 20  рх */
+    margin-bottom: 20px;
+}
+
+/* оформление кнопки "буду смотреть" */
+.button {
+    background: #FF8F27;
+    /* внутренний отступ */
+    padding: 10px 44px;
+    color: #FFFFFF;
+    font-size: 15px;
+    line-height: 16px;
+    /* убираем внешнюю границу (обводку) */
+    border: none;
+}
+
+.actors-title {
+    /* внутренний отступ слева */
+    padding-left: 15px;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 150%;
+    /* отступ вниз,что бы правильно выстраить расстояние от заголовка до фамилий актеров */
+    margin-bottom: 10px;
+}
+
+.actors-list {
+    margin: 0;
+    /* убираем кружочки справа (обозначение списка) */
+    list-style: none;
+    /* внутренний отступ слева */
+    padding-left: 15px;
+    /* что бы сделать подчеркивающие линии */
+    text-decoration: underline;
+    line-height: 150%;
+}
+
+.full-info {
+   flex: 0.97;
+}
+
+.full-content {
+    /* что бы рекламный банер смог расположиться сбоку */
+    display: flex;
+    justify-content: space-between;
+}
+
+.tabs {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4%;
+}
+
+.tabs-content {
+    display: none;
+    margin-right: 70px;
+}
+
+.visible {
+    display: block;
+}
+
+.tabs-item {
+    color: #000000;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+/* задай пожайлуста отступ справа каждому элементу tabs-item, но - not, не тому который последний last-child */
+.tabs-item:not(:last-child) {
+    margin-right: 3%;
+}
+
+.tabs-item-active {
+    color: #FF8F27;
+}
+
+.text {
+    font-size: 16px;
+    line-height: 140%;
+    /* убираем отступ сверху */
+    margin-top: 0;
+}
+
+
+.subscribe-form {
+    position: relative;
+    /* нижний отступ */
+    margin-bottom: 48px;
+}
+
+/* "Подпишитесь на обновление" */
+.subscribe-title {
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 14px;
+    margin-top: 0;
+}
+
+/* поле для ввода email */
+ .subscribe-input {
+     width: calc(100%-5px);
+    /* цвет заливки */
+     background: rgba(196, 196, 196, 0.5); 
+    /* закругление полей */
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    
+    /* отступы по краям */
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+    /* убираем рамку */
+    border: none; 
+    height: 40px;
+    /* цвет шрифта */
+    color: #aeaeae;
+    font-size: 14px;
+    line-height: 16px; 
+ }  
+
+/* кнопочка оранжевая с галочкой */
+.subscribe-button {
+    position: absolute;
+    background: #FF8F27;
+    border-radius: 0px 5px 5px 0px;
+    /* отключаем обводку */
+    border: none;
+    /* внутренний отступ */
+    padding: 9px;
+    height: 40px;
+    width: 40px;
+    top: 0px;
+    right: 0px;
+    text-align: center;
+}
+
+
+
+/* мы говорим браузеру если ширина экрана меньше чем 1200px, то для body задай пожайлуста  background: red,
+ в других случаях правило не будет работать 
+ @media (max-width: 1200px) {
+    body {
+        background: red;
+    }
+}*/
+
+/* контейнер становится меньше на экране меньше 1200px*/
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+    .tabs-item {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 740px;
+    }
+    .tabs {
+        flex-wrap: wrap; /*это свойство говорит, что если элементы не помещаются в одну строку то надо их переносить*/
+    }
+    .tabs-item {
+        flex-basis: 20%;
+        line-height: 2;
+    }
+    .full-content {
+        flex-wrap: wrap; 
+    }
+    .tabs-content {
+        margin-bottom: 5%;
+    }
+    .text {
+        font-size: 14px;
+    }
+    .actors-list {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 560px;
+    }
+    .more {
+        display: none;
+    }
+    .tabs-item {
+        flex-basis: 33%;
+    }
+    .tabs-content {
+        margin-right: 0;
+    }
+    .movie-info {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 578px) {
+    .container {
+        width: 90%;
+    }
+    header {
+        flex-wrap: wrap;
+    }
+    .search {
+        flex-basis: 100%;
+        /*поле поиска должно быть последним*/
+        order: 3;
+        /*поле поиска отодвинуть сверху на 5%*/
+        margin-top: 5%;
+    }
+    .movie-info {
+        flex-wrap: wrap;
+    }
+    .content {
+        flex-wrap: wrap;
+    }
+    .short-info {
+        margin-bottom: 5%;
+    }
+    .actors-list, .actors-title {
+        display: none;
+    }
+    .play {
+        flex-basis: 100%;
+        margin-top: 10%;
+    }
+    .short-info {
+        margin-right: 0;
+    }
+    .poster {
+        margin-top: -20%;
+        display: inline-block;
+        width: 100%;
+    }
+    .button {
+        width: 100%;
+    }
+}
+
+
+

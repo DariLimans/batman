@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <!-- служебная инфа для браузера -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бэтмен 2021 - страница о фильме</title>
+    <!-- Шрифт который брали с сайта fonts.google.com -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap&subset=cyrillic" rel="stylesheet">
+    <!-- что бы отображалась правильно на всех платформах -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- для Fancybox -->
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <!-- подключаем анимацию для css файл скачан с сайта https://daneden.github.io/animate.css/
+    путем сохранить ссылку как -> сохраняем в папку css ссыль с расширением  css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- Тут код для пользователя -->
+<body>
+    
+    <!-- Этот контейнер держит всё содержимое сайта по середине -->
+    <div class="container">
+        <!-- шапка сайта с логотипом, поиском и т.д. -->
+        <header class="header">
+            <!-- логотип -->
+            <div class="logo">КиноПульс</div>
+            <!-- форма с поиском -->
+            <form action="" class="search">
+                <!--"search-input" - поле поиска,placeholde-текст внутри поля ввода  -->
+                <input type="search" class="search-input" placeholder="Фильмы, сериалы, актеры">
+                <!-- кнопка для поиска,type="submit"-кнопка отправляющая запрос -->
+                <button type="submit" class="search-button">
+                    <!-- картинка в кнопочке,src=""-откуда взять картинку,alt - что будет показывать, если картиночка не прогрузится -->
+                    <img src="img\search-icon.svg" alt="search-icon">
+                </button>
+            </form>
+            <!-- юзер -->
+            <div class="user">
+                <!-- что бы при наведении на кнопочку заместо курсора появлялась рука -->
+                <button class="bookmark"><img src="img\bookmark.svg" alt="bookmart" class="bookmart">
+                </button>
+                <img src="img\avatar.jpg" alt="avatar" class="avatar">
+            </div>
+        </header>
+
+        <!-- main используется для того что бы передать главную информацию на странице -->
+        <main class="main">
+            <!-- добавлением в класс animated fadeInRight мы делаем анимацию появления слова от правого конца перед
+            этим в link мы подключили нужную библиатеку анимаций -->
+            <h1 class="title animated fadeInRight" >Бэтмен</h1>
+            <!-- small говорит, что здесь будет текст по меньше -->
+            <small class="title-en animated fadeInRight">The Batman</small>
+            <!-- блок с "Фильм США, Смотреть трейлер" и кнопкой"подробнее" -->
+            <div class="info animated fadeInUp delay-2s">
+                <!--movie-info - инфа о фильме  -->
+                <div class="movie-info">
+                    <span class="tag">Фильм</span>
+                    <span class="country">США, 2021 год</span>
+                    <!-- ссылка, которая позволяет посмотреть трейлер,data-fancybox взяли с 
+                        http://fancyapps.com/fancybox/3/docs/#video это позволит переходить к просмотру трейлера -->
+                    <a data-fancybox href="https://www.youtube.com/watch?v=Xo8i2ZDMlQg" class="play">Смотреть трейлер</a>
+                </div>
+                <a href="#" class="more">Подробнее</a>
+            </div>
+
+            <div class="content">
+                <!-- здесь будет инфа слева - постер, буду смотреть, в главных ролях... -->
+                <div class="short-info">
+                    <img src="./img/poster.jpg" alt="poster" class="poster">
+                    <!-- кнопка буду смотреть -->
+                    <button class="button ">Буду смотреть</button>
+                    <h3 class="actors-title">Вглавных ролях</h3>
+                    <!-- список, ul.actors-list>li*10.actors-list-item -->
+                    <ul class="actors-list">
+                        <li class="actors-list-item">Роберт Паттинсон</li>
+                        <li class="actors-list-item">Зои Кравиц</li>
+                        <li class="actors-list-item">Колин Фаррелл</li>
+                        <li class="actors-list-item">Питер Сарсгаард</li>
+                        <li class="actors-list-item">Пол Дано</li>
+                        <li class="actors-list-item">Энди Серкис</li>
+                        <li class="actors-list-item">Джеффри Райт</li>
+                        <li class="actors-list-item">Джон Туртурро</li>
+                        <li class="actors-list-item">Макс Карвер</li>
+                        <li class="actors-list-item">Кон О’Нилл</li>
+                    </ul>
+                </div>
+                <!-- /.short-info -->
+
+                <div class="full-info">
+                    <!-- новигационное меню -->
+                    <nav class="tabs">
+                        <!-- наши ссылочки : описания, рецензии... a*8[href=#].tabs-item -->
+                        <a href="#about" class="tabs-item tabs-item-active">Описание</a>
+                        <a href="#reviews" class="tabs-item">Рецензии</a>
+                        <a href="#premieres" class="tabs-item">Премьеры</a>
+                        <a href="#actors" class="tabs-item">Актеры</a>
+                        <a href="#rewards" class="tabs-item">Награды</a>
+                        <a href="#evidence" class="tabs-item">Факты</a>
+                        <a href="#websites" class="tabs-item">Сайты</a>
+                        <!-- закладка справа -->
+                        <a href="#" class="tabs-item"><img src="./img/bookmark-icon.svg" alt="" class="bookmark-added"></a>
+                    </nav>
+
+                    <div class="full-content">
+                        
+                        <!-- информация про фильм -->
+                        <div class="tabs-content visible" id="about">
+                            <!-- <p> - параграф -->
+                            <p class="text">Предстоящий американский супергеройский фильм, основанный на одноимённых 
+                                комиксах издательства DC Comics. Картина будет выпущена компанией Warner Bros. и будет
+                                 перезагрузкой всех фильмов о Бэтмене.</p>
+
+                            <p class="text">Фильм является десятым по счёту фильмом из Расширенной вселенной DC. Режиссёром и 
+                                сценаристом фильма выступит Мэтт Ривз, а главную роль исполнит Роберт Паттинсон</p>
+                            <h4 class="text-title">Разаработка</h4>
+                            <p class="text"> В октябре 2014 года студия Warner Bros. объявила, что в разработке находится 
+                                сольный фильм о Бэтмене, роль которого вновь исполнит Бен Аффлек. В июле 2015 года 
+                                сообщалось, что Аффлек ведёт переговоры со студией по поводу постановки фильма и совместного 
+                                написания сценария с Джеффом Джонсом. </p>
+                            <p class="text">После выхода фильма «Бэтмен против Супермена: На заре справедливости» руководитель 
+                                агентства WME Патрик Уайтсел подтвердил, что Аффлек написал сценарий для сольного фильма о 
+                                Бэтмене и в настоящий момент его рассматривают студия и DC. В мае 2016 года Джереми Айронс 
+                                подтвердил, что он появится в фильме про Тёмного Рыцаря.</p>
+                            <p class="text">На Comic-Con в Сан-Диего в июле 2016 года было официально подтверждено, что Аффлек станет 
+                                режиссёром картины. В августе 2016 года на одной из страниц Аффлека в социальных сетях был 
+                                опубликован тестовый материал, в котором был показан персонаж Детстроук. 8 сентября 2016 года Джефф 
+                                Джонс подтвердил, что Джо Манганьелло сыграет наёмника Слейда Уилсона, который, возможно, станет главным злодеем фильма.</p>
+
+                        </div>
+                        <!-- для вкладки рецензия -->
+                        <div class="tabs-content" id="reviews">
+                            <p class="text">Тут скоро появятся отзывы и рецензии</p>
+                        </div>
+                        <div class="tabs-content" id="premieres">
+                            <p class="text">Тут скоро появятся пермьеры</p>
+                        </div>
+                        <div class="tabs-content" id="actors">
+                            <p class="text">Тут скоро появятся актеры</p>
+                        </div>
+                        <div class="tabs-content" id="rewards">
+                            <p class="text">Тут скоро появятся награды</p>
+                        </div>
+                        <div class="tabs-content" id="evidence">
+                            <p class="text">Тут скоро появятся факты</p>
+                        </div>
+                        <div class="tabs-content" id="websites">
+                            <p class="text">Тут скоро появятся сайты</p>
+                        </div>
+                        <div class="subscribe">
+                            <h3 class="subscribe-title">Подпишитесь на обновления</h3>
+                            <!-- форма в которой можно подписаться-->
+                            <form action="#" class="subscribe-form">
+                                <!-- строка для ввода эмейла, placeholder - подсказка -->
+                              <input type="text" class="subscribe-input" placeholder="Ваш Email">
+                              <button class="subscribe-button">
+                                  <img src="./img/check.svg" alt="check">
+                              </button>  
+                                
+                            </form>
+                            <!-- рекламный банер -->
+                            <a href="#" class="banner">
+                                <img src="./img/banner.jpg" alt="banner">
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.content -->
+        </main>
+    </div>
+    <!-- /.container -->
+
+    <!-- Подключаем библиотеку jQuery, чтобы работал плагин Fancybox, файлы взяты http://fancyapps.com/fancybox/3/  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <!-- подключаем плагин Fancybox, т.е. ставим модальные окна -->
+    <script src="js/jquery.fancybox.min.js"></script>
+    <!-- Подключаем свои скрипты, что бы работоло то что в main.js -->
+    <script src="js/main.js"></script>
+</body>
+</html>
